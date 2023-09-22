@@ -4,9 +4,8 @@ pipeline {
         stage('Deploy') { 
             steps {
                 echo 'deployeing fucker'
-                dir('/var/www/JenkinsDemo'){
-                    sh 'sudo git pull origin master'
-                    sh 'sudo service nginx restart'
+                dir('/home/ec2-user/'){
+                    sh 'sudo mkdir test1'
                 }
                 echo 'deployed'
             }
