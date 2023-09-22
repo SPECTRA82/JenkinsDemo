@@ -1,19 +1,14 @@
 pipeline {
     agent any 
     stages {
-        stage('Build 2') { 
-            steps {
-                echo "Build 3"
-            }
-        }
-        stage('Test') { 
-            steps {
-                echo "Test"
-            }
-        }
         stage('Deploy') { 
             steps {
-                echo "Deploy"
+                echo 'deployeing fucker'
+                dir('/var/www/JenkinsDemo'){
+                    sh 'git pull'
+                    sh 'service nginx restart'
+                }
+                echo 'deployed'
             }
         }
     }
