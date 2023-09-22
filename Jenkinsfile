@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'deployeing fucker'
                 dir('/var/www/JenkinsDemo'){
-                    sh 'git pull'
+                    git 'pull'
                     sh 'service nginx restart'
                 }
                 echo 'deployed'
